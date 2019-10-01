@@ -6,7 +6,7 @@ pipeline {
           steps {
               echo "Check enviroment "
               sh "env"
-              slackSend (message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.JENKINS_URL}/blue/organizations/jenkins/forward-cicd-ansible/detail/master/${env.BUILD_NUMBER})",  username: 'fabriziomaccioni', token: "", teamDomain: 'nfd-fwd', channel: 'cicd-service-deployment')
+              slackSend (message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.JENKINS_URL}/blue/organizations/jenkins/forward-cicd-ansible/detail/master/${env.BUILD_NUMBER})",  username: 'fabriziomaccioni', teamDomain: 'nfd-fwd', channel: 'cicd-service-deployment')
             }
         }
         stage("Gather Deployment Parameters") {
